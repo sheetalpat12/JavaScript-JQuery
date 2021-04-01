@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tabs</title>
+<link href="../_css/site.css" rel="stylesheet">
+<style>
+.tabs {
+	margin: 0;
+	padding: 0;	
+	zoom : 1;
+}
+.tabs li {
+	float: left;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.tabs a {
+	display: block;
+	text-decoration: none;
+	padding: 3px 5px;
+	background-color: rgb(110,138,195);
+	margin-right: 10px;
+	border: 1px solid rgb(153,153,153);
+	margin-bottom: -1px;
+}
+.tabs .active {
+	border-bottom: 1px solid white;
+	background-color: white;
+	color: rgb(51,72,115);
+	position: relative;
+}
+
+.panelContainer {
+	clear: both;
+	margin-bottom: 25px;	
+	border: 1px solid rgb(153,153,153);	
+	background-color: white;
+	padding: 10px;
+}
+
+.panel h2 {
+	color: rgb(57,78,121);
+	text-shadow: none;		
+}
+.panel p {
+	color: black;	
+}
+</style>
+<script src="../_js/jquery-1.7.2.min.js"></script>
+<script>
+$(document).ready(function() {
+	
+	$('.tabs a').click(function() {
+		// save $(this) in a variable for efficiency
+		var $this = $(this);
+		
+		// hide panels
+		$('.panel').hide();
+		$('.tabs a.active').removeClass('active');
+		    
+		// add active state to new tab
+		$this.addClass('active').blur();	
+		// retrieve href from link (is id of panel to display)
+		var panel = $this.attr('href');
+		// show panel
+		$(panel).fadeIn(250);
+		
+		// don't follow link down page
+		return(false);
+	}); // end click
+	 
+	// open first tab
+	$('.tabs li:first a').click();
+}); // end ready
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<div class="header">
+		
+		<p class="logo">JavaScript <i>&</i> jQuery <i class="mm">The<br>Missing<br>Manual</i></p>
+	</div>
+	<div class="content">
+		<div class="main">
+			<h1>Technological Revolution</h1>
+		  <div class="tabbedPanels">
+			<ul class="tabs">
+  				<li><a href="#panel1" tabindex="1">Tab 1</a></li>
+  				<li><a href="#panel2" tabindex="2">Tab 2</a></li>
+  				<li><a href="#panel3" tabindex="3">Tab 3</a></li>
+			</ul>
+<div class="panelContainer">
+		<div id="panel1" class="panel">
+			<h2>Tech Revolution-Tab 1</h2>
+			<p><img src="../_images/small/red_h.jpg" alt="Red" width="70" height="70" class="imgRight">A technological revolution generally increases productivity and efficiency. It may involve material or ideological changes caused by the introduction of a device or system. Some examples of its potential impact are business management, education, social interactions, finance and research methodology; it is not limited strictly to technical aspects. </p>
+			<p><img src="../_images/small/slide3_h.jpg" alt="Old Course" width="70" height="70" class="imgLeft">The technological revolution rewrites the material conditions of human existence and can reshape culture. It can play a role as a trigger of a chain of various and unpredictable changes. </p>
+		</div>
+
+		<div id="panel2" class="panel">
+			<h2>Tech Revolution-Tab 2</h2>
+			<p style="text-align:center;margin-top: 25px;"><img src="../_images/large/slide4.jpg" width="610" height="342" alt="tees"></p>
+		</div>
+
+		<div id="panel3" class="panel">
+			<h2>Tech Revolution-Tab 3</h2>
+			<p>A technological revolution generally increases productivity and efficiency. It may involve material or ideological changes caused by the introduction of a device or system. Some examples of its potential impact are business management, education, social interactions, finance and research methodology; it is not limited strictly to technical aspects. The technological revolution rewrites the material conditions of human existence and can reshape culture. It can play a role as a trigger of a chain of various and unpredictable changes.</p>
+			<p>What distinguishes a technological revolution from a random collection of technology systems and justifies conceptualizing it as a revolution are two basic features:</p>
+					<p>
+					1. The strong interconnectedness and interdependence of the participating systems in their technologies and markets.<br/>
+
+					2. The capacity to transform profoundly the rest of the economy (and eventually society)
+					</p>
+			<p>The consequences of a technological revolution are not necessarily positive. For example, innovations, such as the use of coal as an energy source, can have negative environmental impact and cause technological unemployment. Schumpeter described this contradictory nature of technological revolution, creative destruction.[3] The concept of technological revolution is based on the idea that technological progress is not linear but undulatory. </p>
+		</div>
+</div>
+</div>
+		<p>A technological revolution generally increases productivity and efficiency. It may involve material or ideological changes caused by the introduction of a device or system. Some examples of its potential impact are business management, education, social interactions, finance and research methodology; it is not limited strictly to technical aspects. The technological revolution rewrites the material conditions of human existence and can reshape culture. It can play a role as a trigger of a chain of various and unpredictable changes.
+		</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>
